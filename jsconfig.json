@@ -1,7 +1,7 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "nodenext"
-  }
+	"compilerOptions": {
+		"jsx": "react",
+		"target": "ESNext"
+		// "module": "nodenext"
+	}
 }
-
