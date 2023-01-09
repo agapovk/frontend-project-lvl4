@@ -1,7 +1,7 @@
-### Hexlet tests and linter status:
+### `Hexlet tests and linter status:`
 
 [![Actions Status](https://github.com/agapovk/frontend-project-lvl4/workflows/hexlet-check/badge.svg)](https://github.com/agapovk/frontend-project-lvl4/actions)
 
-### Deployment
+### `Chat - hexlet frontend project`
 
-[(https://frontend-project-lvl4-production-86bf.up.railway.app/)](https://frontend-project-lvl4-production-86bf.up.railway.app/)
+[frontend-project-lvl4-production-1791.up.railway.app](http://frontend-project-lvl4-production-1791.up.railway.app)

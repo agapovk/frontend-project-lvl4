@@ -7,9 +7,6 @@ extends:
   - plugin:react/recommended
   - plugin:functional/recommended
   - plugin:react-hooks/recommended
-  - plugin:import/recommended
-  - plugin:jsx-a11y/recommended
-  - eslint-config-prettier
 
 parserOptions:
   ecmaFeatures:
@@ -34,8 +31,7 @@ rules:
   functional/no-try-statement: 0
   functional/no-throw-statement: 0
   no-underscore-dangle: [2, { 'allow': ['__filename', '__dirname'] }]
-  react/function-component-definition:
-    [2, { 'namedComponents': 'arrow-function' }]
+  react/function-component-definition: [2, { 'namedComponents': 'arrow-function' }]
   testing-library/no-debug: 0
   react/jsx-filename-extension: [1, { 'extensions': ['.js', '.jsx'] }]
   no-tabs: 0
