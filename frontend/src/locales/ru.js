@@ -36,7 +36,7 @@ export default {
 		toast: {
 			add: 'Канал создан',
 			rename: 'Канал переименован',
-			delete: 'Канал удален'
+			delete: 'Канал удалён'
 		},
 		modals: {
 			add: {
