@@ -1,23 +1,23 @@
 export default {
 	translation: {
 		header: {
-			logout: 'Выйти',
+			logout: 'Выйти'
 		},
 		login: {
 			header: 'Войти в чат',
-			enterName: 'Введите имя',
-			enterPwd: 'Введите пароль',
+			enterName: 'Имя пользователя',
+			enterPwd: 'Пароль',
 			enter: 'Войти',
 			notHaveAcc: 'Нет аккаунта?',
-			reg: 'Регистрация',
+			reg: 'Регистрация'
 		},
 		signup: {
 			header: 'Регистрация',
-			enterName: 'Введите имя',
-			enterPwd: 'Введите пароль',
-			confirmPwd: 'Подтвердите пароль',
+			enterName: 'Имя пользователя',
+			enterPwd: 'Пароль',
+			confirmPwd: 'Подтверждение пароля',
 			signup: 'Зарегистрироваться',
-			error: 'Такой пользователь уже существует',
+			error: 'Такой пользователь уже существует'
 		},
 		home: {
 			channels: 'Каналы',
@@ -25,17 +25,17 @@ export default {
 			mesCount_few: 'сообщения',
 			mesCount_many: 'сообщений',
 			enterMessage: 'Введите сообщение',
-			send: 'Отправить',
+			send: 'Отправить'
 		},
 		missing: {
 			notFound: 'Страница не найдена',
 			but: 'Но вы можете перейти',
-			toHome: 'на главную страницу',
+			toHome: 'на главную страницу'
 		},
 		toast: {
 			add: 'Канал создан',
 			rename: 'Канал переименован',
-			delete: 'Канал удален',
+			delete: 'Канал удален'
 		},
 		modals: {
 			add: {
@@ -43,19 +43,19 @@ export default {
 				enterChannelName: 'Введите название канала',
 				close: 'Закрыть',
 				save: 'Сохранить',
-				error: 'Такой канал уже существует',
+				error: 'Такой канал уже существует'
 			},
 			rename: {
 				renameChannel: 'Переименовать канал',
 				close: 'Закрыть',
 				save: 'Сохранить',
-				error: 'Такой канал уже существует',
+				error: 'Такой канал уже существует'
 			},
 			delete: {
 				deleteChannel: 'Удалить канал?',
 				close: 'Закрыть',
-				delete: 'Удалить',
-			},
-		},
-	},
+				delete: 'Удалить'
+			}
+		}
+	}
 };
