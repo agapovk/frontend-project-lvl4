@@ -41,7 +41,7 @@ export default {
 		modals: {
 			add: {
 				newChannel: 'Новый канал',
-				enterChannelName: 'Введите название канала',
+				enterChannelName: 'Имя канала',
 				close: 'Закрыть',
 				save: 'Сохранить',
 				error: 'Такой канал уже существует'

@@ -86,6 +86,7 @@ const Messages = () => {
 						className='form-control'
 						placeholder={t('home.enterMessage')}
 						value={message}
+						aria-label='Новое сообщение'
 						onChange={(e) => setMessage(e.target.value)}
 					/>
 					<button className='btn btn-primary' type='submit' id='button-addon2'>
