@@ -3,10 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useTranslation } from 'react-i18next';
-import { ButtonGroup } from 'react-bootstrap';
 import { ToastContainer } from 'react-toastify';
 import { setChannel, getChannels } from '../app/features/chatSlice';
 import DataContext from '../context/DataContext';
@@ -36,7 +34,7 @@ const Home = () => {
 		const getChatData = async () => {
 			try {
 				const response = await axios.get('/api/v1/data', {
-					headers: { Authorization: `Bearer ${user.token}` },
+					headers: { Authorization: `Bearer ${user.token}` }
 				});
 				dispatch(getChannels(response.data));
 			} catch (error) {
@@ -82,30 +80,32 @@ const Home = () => {
 											</span>
 										</Button>
 										{c.removable && (
-											<DropdownButton
-												as={ButtonGroup}
-												title=''
-												id='bg-nested-dropdown'
-												variant='link'>
-												<Dropdown.Item
-													eventKey='1'
-													className='small'
-													onClick={() => {
-														setShowDeleteModal(true);
-														setEditChannel(c);
-													}}>
-													Удалить
-												</Dropdown.Item>
-												<Dropdown.Item
-													eventKey='2'
-													className='small'
-													onClick={() => {
-														setShowRenameModal(true);
-														setEditChannel(c);
-													}}>
-													Переименовть
-												</Dropdown.Item>
-											</DropdownButton>
+											<Dropdown>
+												<Dropdown.Toggle id='bg-nested-dropdown' variant='link'>
+													<span className='visually-hidden'>Управление каналом</span>
+												</Dropdown.Toggle>
+
+												<Dropdown.Menu>
+													<Dropdown.Item
+														eventKey='1'
+														className='small'
+														onClick={() => {
+															setShowDeleteModal(true);
+															setEditChannel(c);
+														}}>
+														Удалить
+													</Dropdown.Item>
+													<Dropdown.Item
+														eventKey='2'
+														className='small'
+														onClick={() => {
+															setShowRenameModal(true);
+															setEditChannel(c);
+														}}>
+														Переименовть
+													</Dropdown.Item>
+												</Dropdown.Menu>
+											</Dropdown>
 										)}
 									</li>
 								))}

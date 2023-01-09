@@ -72,6 +72,7 @@ const RenameChannel = () => {
 				<Form onSubmit={handleRenameSubmit}>
 					<Modal.Body>
 						<Form.Group className='my-3' controlId='renameForm'>
+							<Form.Label className='visually-hidden'>Имя канала</Form.Label>
 							<Form.Control
 								ref={inputRef}
 								type='text'

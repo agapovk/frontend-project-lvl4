@@ -67,6 +67,7 @@ const AddChannel = () => {
 				<Form onSubmit={handleNewChannelSubmit}>
 					<Modal.Body>
 						<Form.Group className='my-3' controlId='addForm'>
+							<Form.Label className='visually-hidden'>Имя канала</Form.Label>
 							<Form.Control
 								autoFocus
 								type='text'
