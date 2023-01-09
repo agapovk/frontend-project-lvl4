@@ -5,11 +5,12 @@ export default {
 		},
 		login: {
 			header: 'Войти в чат',
-			enterName: 'Имя пользователя',
+			enterName: 'Ваш ник',
 			enterPwd: 'Пароль',
 			enter: 'Войти',
 			notHaveAcc: 'Нет аккаунта?',
-			reg: 'Регистрация'
+			reg: 'Регистрация',
+			error: 'Неверные имя пользователя или пароль'
 		},
 		signup: {
 			header: 'Регистрация',

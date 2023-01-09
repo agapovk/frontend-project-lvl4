@@ -19,15 +19,13 @@ const Login = () => {
 			setAuthError(undefined);
 			const response = await axios.post('/api/v1/login', {
 				username: values.name,
-				password: values.password,
+				password: values.password
 			});
 			setUser(response.data);
 			navigate('/');
 		} catch (error) {
 			console.error(error);
-			setAuthError(
-				error.response.status === 401 ? 'Логин или пароль не найдены' : error.response.statusText
-			);
+			setAuthError(error.response.status === 401 ? t('login.error') : error.response.statusText);
 		}
 
 		actions.resetForm();
@@ -37,10 +35,10 @@ const Login = () => {
 		useFormik({
 			initialValues: {
 				name: '',
-				password: '',
+				password: ''
 			},
 			validationSchema: loginSchema,
-			onSubmit,
+			onSubmit
 		});
 
 	const errorClassNames = 'small px-2 my-1 text-danger';
