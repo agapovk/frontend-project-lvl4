@@ -102,7 +102,7 @@ const Home = () => {
 															setShowRenameModal(true);
 															setEditChannel(c);
 														}}>
-														Переименовть
+														Переименовать
 													</Dropdown.Item>
 												</Dropdown.Menu>
 											</Dropdown>
