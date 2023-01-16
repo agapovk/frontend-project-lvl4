@@ -30,11 +30,6 @@ const Home = () => {
 
   const navigate = useNavigate();
 
-  // const notifyError = () => {
-  // 	console.log('toast');
-  // 	return toast.error('Все  пропало');
-  // };
-
   useEffect(() => {
     const getChatData = async () => {
       try {
@@ -51,8 +46,6 @@ const Home = () => {
       navigate('/login');
     } else {
       getChatData();
-      // eslint-disable-next-line no-unused-expressions
-      // !chat.channels && notifyError();
     }
   }, [dispatch, navigate, user]);
 

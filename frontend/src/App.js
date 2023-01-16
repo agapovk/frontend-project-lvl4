@@ -5,19 +5,17 @@ import Login from './components/Login';
 import Missing from './components/Missing';
 import Signup from './components/Signup';
 
-const App = () => {
-  return (
-    <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="*" element={<Missing />} />
-      </Routes>
-    </>
-  );
-};
+const App = () => (
+  <>
+    <Header />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="*" element={<Missing />} />
+    </Routes>
+  </>
+);
 
 App.whyDidYouRender = true;
 

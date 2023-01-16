@@ -54,11 +54,10 @@ const Messages = () => {
 
   const scroll = useRef(null);
 
-  const filteredMessages = (id) => {
-    return chat.messages
-      ? chat.messages.filter((mes) => mes.channelId === id)
-      : [];
-  };
+  // eslint-disable-next-line no-confusing-arrow
+  const filteredMessages = (id) =>
+    // eslint-disable-next-line implicit-arrow-linebreak
+    chat.messages ? chat.messages.filter((mes) => mes.channelId === id) : [];
 
   useEffect(() => {
     scroll.current.scrollIntoView({ behavior: 'smooth' });
