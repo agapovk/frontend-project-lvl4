@@ -1,4 +1,9 @@
-import { useContext, useState, useEffect, useRef } from 'react';
+import {
+	useContext,
+	useState,
+	useEffect,
+	useRef
+} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -15,8 +20,7 @@ const RenameChannel = () => {
   const [nameChannel, setNameChannel] = useState('');
   const [nameError, setNameError] = useState(false);
 
-  const { showRenameModal, setShowRenameModal, editChannel } =
-    useContext(DataContext);
+  const { showRenameModal, setShowRenameModal, editChannel } = useContext(DataContext);
 
   const chat = useSelector((state) => state.chat);
   const dispatch = useDispatch();

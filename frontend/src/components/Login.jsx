@@ -111,7 +111,8 @@ const Login = () => {
           {authError && <p className={errorClassNames}>{authError}</p>}
         </form>
         <div className="col-8 col-md-6 col-xl-4 text-center">
-          {t('login.notHaveAcc')} <Link to="/signup">{t('login.reg')}</Link>
+          {t('login.notHaveAcc')} 
+					<Link to="/signup">{t('login.reg')}</Link>
         </div>
       </div>
     </div>

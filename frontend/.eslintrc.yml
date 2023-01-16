@@ -36,6 +36,7 @@ rules:
     [2, { 'namedComponents': 'arrow-function' }]
   testing-library/no-debug: 0
   react/jsx-filename-extension: [1, { 'extensions': ['.js', '.jsx'] }]
+  object-curly-newline: 1
   # no-tabs: 0
   # react/jsx-indent: 0
   # jsx-quotes: 0
