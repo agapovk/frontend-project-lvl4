@@ -98,4 +98,6 @@ const Messages = () => {
 	);
 };
 
+Messages.whyDidYouRender = true;
+
 export default Messages;

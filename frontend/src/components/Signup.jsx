@@ -20,7 +20,7 @@ const Signup = () => {
 			setSignupError(undefined);
 			const response = await axios.post('/api/v1/signup', {
 				username: values.name,
-				password: values.password,
+				password: values.password
 			});
 			setUser(response.data);
 			navigate('/');
@@ -41,10 +41,10 @@ const Signup = () => {
 			initialValues: {
 				name: '',
 				password: '',
-				confirm: '',
+				confirm: ''
 			},
 			validationSchema: signupSchema,
-			onSubmit,
+			onSubmit
 		});
 
 	const errorClassNames = 'small px-2 my-1 text-danger';
@@ -112,5 +112,7 @@ const Signup = () => {
 		</div>
 	);
 };
+
+Signup.whyDidYouRender = true;
 
 export default Signup;

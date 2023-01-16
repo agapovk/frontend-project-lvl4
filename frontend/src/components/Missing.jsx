@@ -14,4 +14,6 @@ const Missing = () => {
 	);
 };
 
+Missing.whyDidYouRender = true;
+
 export default Missing;

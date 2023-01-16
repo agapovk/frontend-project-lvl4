@@ -67,4 +67,6 @@ const DeleteChannel = () => {
 	);
 };
 
+DeleteChannel.whyDidYouRender = true;
+
 export default DeleteChannel;

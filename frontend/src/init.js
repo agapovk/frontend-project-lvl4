@@ -8,7 +8,7 @@ const init = async () => {
 
 	await i18n.use(initReactI18next).init({
 		resources,
-		fallbackLng: 'ru',
+		fallbackLng: 'ru'
 	});
 
 	return (

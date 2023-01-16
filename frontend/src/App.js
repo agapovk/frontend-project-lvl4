@@ -19,4 +19,6 @@ const App = () => {
 	);
 };
 
+App.whyDidYouRender = true;
+
 export default App;

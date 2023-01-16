@@ -99,4 +99,6 @@ const RenameChannel = () => {
 	);
 };
 
+RenameChannel.whyDidYouRender = true;
+
 export default RenameChannel;

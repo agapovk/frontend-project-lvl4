@@ -92,4 +92,6 @@ const AddChannel = () => {
 	);
 };
 
+AddChannel.whyDidYouRender = true;
+
 export default AddChannel;
