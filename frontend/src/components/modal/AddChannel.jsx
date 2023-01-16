@@ -12,84 +12,88 @@ import { addChannel, setChannel } from '../../app/features/chatSlice.js';
 const socket = io();
 
 const AddChannel = () => {
-	const [newChannel, setNewChannel] = useState('');
-	const [nameError, setNameError] = useState(false);
+  const [newChannel, setNewChannel] = useState('');
+  const [nameError, setNameError] = useState(false);
 
-	const { showAddModal, setShowAddModal } = useContext(DataContext);
+  const { showAddModal, setShowAddModal } = useContext(DataContext);
 
-	const chat = useSelector((state) => state.chat);
-	const dispatch = useDispatch();
+  const chat = useSelector((state) => state.chat);
+  const dispatch = useDispatch();
 
-	const chatNames = chat.channels ? chat.channels.map((m) => m.name) : [];
+  const chatNames = chat.channels ? chat.channels.map((m) => m.name) : [];
 
-	const { t } = useTranslation();
+  const { t } = useTranslation();
 
-	const notifyAdd = () => toast.success(t('toast.add'));
+  const notifyAdd = () => toast.success(t('toast.add'));
 
-	const handleNewChannelSubmit = (e) => {
-		e.preventDefault();
-		// check name
-		if (chatNames.includes(newChannel)) {
-			setNameError(true);
-		} else {
-			// emit new channel
-			socket.emit('newChannel', { name: newChannel });
-			notifyAdd();
-			setNewChannel('');
-			setShowAddModal(false);
-			setNameError(false);
-		}
-	};
+  const handleNewChannelSubmit = (e) => {
+    e.preventDefault();
+    // check name
+    if (chatNames.includes(newChannel)) {
+      setNameError(true);
+    } else {
+      // emit new channel
+      socket.emit('newChannel', { name: newChannel });
+      notifyAdd();
+      setNewChannel('');
+      setShowAddModal(false);
+      setNameError(false);
+    }
+  };
 
-	useEffect(() => {
-		setNameError(false);
-		setNewChannel('');
-		socket.removeListener('newChannel');
-		// update channels
-		socket.on('newChannel', (payload) => {
-			dispatch(addChannel(payload));
-			dispatch(setChannel(payload.id));
-		});
-	}, [dispatch]);
+  useEffect(() => {
+    setNameError(false);
+    setNewChannel('');
+    socket.removeListener('newChannel');
+    // update channels
+    socket.on('newChannel', (payload) => {
+      dispatch(addChannel(payload));
+      dispatch(setChannel(payload.id));
+    });
+  }, [dispatch]);
 
-	const closeModal = () => {
-		setNewChannel('');
-		setShowAddModal(false);
-	};
+  const closeModal = () => {
+    setNewChannel('');
+    setShowAddModal(false);
+  };
 
-	return (
-		<>
-			{/* <ToastContainer /> */}
-			<Modal show={showAddModal} onHide={closeModal} backdrop='static'>
-				<Modal.Header closeButton>
-					<Modal.Title>{t('modals.add.newChannel')}</Modal.Title>
-				</Modal.Header>
-				<Form onSubmit={handleNewChannelSubmit}>
-					<Modal.Body>
-						<Form.Group className='my-3' controlId='addForm'>
-							<Form.Label className='visually-hidden'>Имя канала</Form.Label>
-							<Form.Control
-								autoFocus
-								type='text'
-								placeholder={t('modals.add.enterChannelName')}
-								value={newChannel}
-								onChange={(e) => setNewChannel(e.target.value)}
-							/>
-							{nameError && <Form.Text className='text-danger'>{t('modals.add.error')}</Form.Text>}
-						</Form.Group>
-					</Modal.Body>
-					<Modal.Footer>
-						<Button variant='secondary' onClick={closeModal}>
-							{t('modals.add.close')}
-						</Button>
-						<Button type='submit' variant='primary'>
-							{t('modals.add.save')}
-						</Button>
-					</Modal.Footer>
-				</Form>
-			</Modal>
-		</>
-	);
+  return (
+    <>
+      {/* <ToastContainer /> */}
+      <Modal show={showAddModal} onHide={closeModal} backdrop="static">
+        <Modal.Header closeButton>
+          <Modal.Title>{t('modals.add.newChannel')}</Modal.Title>
+        </Modal.Header>
+        <Form onSubmit={handleNewChannelSubmit}>
+          <Modal.Body>
+            <Form.Group className="my-3" controlId="addForm">
+              <Form.Label className="visually-hidden">Имя канала</Form.Label>
+              <Form.Control
+                autoFocus
+                type="text"
+                placeholder={t('modals.add.enterChannelName')}
+                value={newChannel}
+                onChange={(e) => setNewChannel(e.target.value)}
+              />
+              {nameError && (
+                <Form.Text className="text-danger">
+                  {t('modals.add.error')}
+                </Form.Text>
+              )}
+            </Form.Group>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={closeModal}>
+              {t('modals.add.close')}
+            </Button>
+            <Button type="submit" variant="primary">
+              {t('modals.add.save')}
+            </Button>
+          </Modal.Footer>
+        </Form>
+      </Modal>
+    </>
+  );
 };
 
 AddChannel.whyDidYouRender = true;
