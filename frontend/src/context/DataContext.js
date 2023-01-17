@@ -15,8 +15,7 @@ export const DataProvider = ({ children }) => {
     localStorage.setItem('user', JSON.stringify(u));
   };
 
-  const getUserFromLocalStorgae = () =>
-    JSON.parse(localStorage.getItem('user'));
+  const getUserFromLocalStorgae = () => JSON.parse(localStorage.getItem('user'));
 
   // useMemo
   const value = useMemo(

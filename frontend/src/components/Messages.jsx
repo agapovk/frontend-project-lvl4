@@ -1,8 +1,9 @@
-import { 
-	useState,
-	useEffect,
-	useContext,
-	useRef
+/* eslint-disable react/jsx-one-expression-per-line */
+import {
+  useState,
+  useEffect,
+  useContext,
+  useRef,
 } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { io } from 'socket.io-client';
@@ -84,10 +85,7 @@ const Messages = () => {
         <ul className="list-unstyled m-0 p-0">
           {filteredMessages(chat.currentChannelId).map((m) => (
             <li key={m.id} className="mt-2 text-break">
-              <span className="fw-bold">
-								{m.username}
-								:
-							</span>
+              <span className="fw-bold">{m.username}:</span>
               &nbsp;
               <span className="">{filter.clean(m.body)}</span>
             </li>

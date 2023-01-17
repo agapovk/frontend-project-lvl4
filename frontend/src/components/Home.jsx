@@ -69,7 +69,7 @@ const Home = () => {
             </div>
             <ul className="list-unstyled flex-grow-1 overflow-auto">
               {chat.channels
-								&& chat.channels.map((c) => (
+                && chat.channels.map((c) => (
                   <li
                     key={c.id}
                     className="d-flex justify-content-center align-items-center"

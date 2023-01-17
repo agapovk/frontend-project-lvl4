@@ -13,11 +13,11 @@ const socket = io();
 
 const DeleteChannel = () => {
   const {
-		showDeleteModal,
-		setShowDeleteModal,
-		editChannel,
-		setEditChannel
-	} = useContext(DataContext);
+    showDeleteModal,
+    setShowDeleteModal,
+    editChannel,
+    setEditChannel,
+  } = useContext(DataContext);
 
   const dispatch = useDispatch();
 
